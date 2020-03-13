@@ -13,9 +13,11 @@ class PriorityQueue <T : Comparable<T>>(data: Array<T>, private var size: Int, p
         this.heap = data.sliceArray(0..size) as Array<T?>
         for(pos in ((size - 1)/ 2) downTo 0) heapify(pos)
     }
+    
     override fun enqueue(e: T) {
         insert(e)
     }
+    
     override fun dequeue(): T {
         return extract()
     }
@@ -183,6 +185,7 @@ class PriorityQueue <T : Comparable<T>>(data: Array<T>, private var size: Int, p
     }
 }
 
+//testing
 fun main() {
     val arr = arrayOf(10,34,23,5,23,4567,34,23423,764)
     val pq = PriorityQueue(arr, 6, null)
